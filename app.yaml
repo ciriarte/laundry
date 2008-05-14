@@ -7,6 +7,9 @@ handlers:
 - url: /stylesheets
   static_dir: content/stylesheets
 
+- url: /images
+  static_dir: content/images
+
 - url: /.*
   script: controllers/home.py
 

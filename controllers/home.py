@@ -9,7 +9,7 @@ from google.appengine.ext.webapp import template
 
 class HomeController(webapp.RequestHandler):
   def get(self):
-	path = os.path.join(os.path.dirname(__file__), '../views/index.html')
+	path = os.path.join(os.path.dirname(__file__), '../views/home.html')
 	
 	template_values = {
 		

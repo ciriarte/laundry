@@ -23,7 +23,7 @@ p {
 .nav 
 {
 	width: 688px;
-	background: #fff url(images/nav_bg.png) repeat-x;
+	background: #fff url(../images/nav_bg.png) repeat-x;
 	float: left;
 }
 .nav-wrapper {
@@ -31,13 +31,13 @@ p {
 	float: left;
 }
 .nav-left {
-	background: url(images/nav_left.png) no-repeat top left;
+	background: url(../images/nav_left.png) no-repeat top left;
 	float: left;
 	width: 11px;
 	height: 41px;
 }
 .nav-right {
-	background: url(images/nav_right.png) no-repeat top right;
+	background: url(../images/nav_right.png) no-repeat top right;
 	float: left;
 	width: 11px;
 	height: 41px;
@@ -54,7 +54,7 @@ p {
 .nav li {
 	float: left;
 	padding: 0 7px;
-	background: url(images/split.png) no-repeat right center;
+	background: url(../images/split.png) no-repeat right center;
 	position: relative;
 	z-index: 1;
 }
@@ -71,7 +71,7 @@ p {
 	float: left;
 }
 a .menu-left {
-	background: url(images/menu_left.gif) no-repeat left top;
+	background: url(../images/menu_left.gif) no-repeat left top;
 	width: 8px;
 	height: 32px;
 	line-height: 35px;
@@ -79,14 +79,14 @@ a .menu-left {
 	float: left;
 }
 a .menu-mid {
-	background: url(images/menu_mid.gif) repeat-x top left;
+	background: url(../images/menu_mid.gif) repeat-x top left;
 	height: 32px;
 	line-height: 35px;
 	display: block;
 	float: left;
 }
 a .menu-right {
-	background: url(images/menu_right.gif) no-repeat top left;
+	background: url(../images/menu_right.gif) no-repeat top left;
 	width: 8px;
 	height: 32px;
 	line-height: 35px;
@@ -120,12 +120,12 @@ a .menu-right {
 	position: absolute;
 	top: 27px;
 	left: 6px;
-	background: url(images/submenu_top.png) no-repeat;
+	background: url(../images/submenu_top.png) no-repeat;
 	width: 186px;
 	padding-top: 9px;
 }
 .nav li ul {
-	background: url(images/submenu_bg.png) repeat-y;
+	background: url(../images/submenu_bg.png) repeat-y;
 	width: 162px;
 	height: auto;
 	margin: 0;
@@ -167,7 +167,7 @@ a .menu-right {
 }
 /**/
 .nav .btm-bg {
-	background: url(images/submenu_bottom.png) no-repeat;
+	background: url(../images/submenu_bottom.png) no-repeat;
 	width: 205px;
 	height: 9px;
 	overflow: hidden;
@@ -175,7 +175,7 @@ a .menu-right {
 }
 .content {
 	width: 670px;
-	background: transparent url(images/content_bg.png) repeat-y;
+	background: transparent url(../images/content_bg.png) repeat-y;
 	float: left;
 	padding: 10px 20px;
 }
@@ -199,7 +199,7 @@ a .menu-right {
 }
 .content-bottom {
 	width: 710px;
-	background: transparent url(images/content_bottom.png) no-repeat;
+	background: transparent url(../images/content_bottom.png) no-repeat;
 	height: 13px;
 	float: left;
 }
