@@ -1,0 +1,16 @@
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="stylesheets/main.css" />
+	</head>
+	<body>
+		{% for order in orders %}
+			<a href="/order">order</a>
+		{% endfor %}
+		
+		<form action="/project" method="post">
+			<div><textarea name="content" rows="3" cols="60"></textarea></div>
+			<div><input type="submit" value="Sign Guestbook"></div>
+		</form>
+		
+	</body>
+</html>

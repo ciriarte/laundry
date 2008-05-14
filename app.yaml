@@ -1,0 +1,17 @@
+application: laundry
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /stylesheets
+  static_dir: content/stylesheets
+
+- url: /.*
+  script: controllers/home.py
+
+- url: /order/.*
+  script: controllers/order.py
+  
+- url: /client/.*
+  script: controllers/client.py
