@@ -12,9 +12,3 @@ handlers:
 
 - url: /.*
   script: controllers/home.py
-
-- url: /order/.*
-  script: controllers/order.py
-  
-- url: /client/.*
-  script: controllers/client.py

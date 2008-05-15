@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="/stylesheets/contact.css" type="text/css" media="screen">
+{% endblock %}
+
+{% block scripts %}
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAADoWftFOXEivyN_t2ueMv6hQYh9am1_w70TJogptJTNdZBXcbABQfIex3e6Xg4dazbl4M2gI6fyMQ0A"
+  type="text/javascript"></script>
+<script type="text/javascript">
+
+//<![CDATA[
+
+function load() {
+  if (GBrowserIsCompatible()) {
+    var map = new GMap2(document.getElementById("map"));
+    map.setCenter(new GLatLng(23.250558,-106.433079), 13);
+  }
+}
+
+//]]>
+</script>
+{% endblock %}
+
+{% block bodyHooks %}onload="load()" onunload="GUnload()"{% endblock %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %} 
+<h3>Where can you find us?</h3>
+<div id="map" style="width: 400px; height: 300px"></div>
+<div class="vcard">
+ <div class="org">Lavandera Suelly Maxiclim</div>
+ <a class="email" href="mailto:suelly@laundry4me.com">sales@laundry4me.com</a>
+ <div class="adr">
+  <div class="street-address">Av. Francisco Sol&iacute;s 1280 L-8</div>
+  <span class="locality">Mazatl&aacute;n</span>, 
+  <span class="region">Sinaloa</span>,   <span class="postal-code">82127</span>
+  <span class="country-name">M&eacute;xico</span>
+ </div>
+ <div class="tel">+52 (81) 133 1955</div>
+</div>
+{% endblock %}
