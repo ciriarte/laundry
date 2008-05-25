@@ -1,0 +1,31 @@
+.order {
+	margin-bottom: 10px;
+}
+
+.status {
+	background: url(/images/order-48x48.png) no-repeat;
+	float: left;
+	height: 48px;
+	width: 48px;
+}
+.status span {
+	color: white;
+	font-size: x-small;
+	display: block;
+	white-space: nowrap;
+	text-align: center;
+}
+.title {
+	margin-left: 53px;
+	height: 48px;
+}
+.title h4 {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.title h4 a {
+	color: #165B9F;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}

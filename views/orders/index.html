@@ -1,0 +1,20 @@
+{% extends "../main.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="/stylesheets/orders/index.css" type="text/css" media="screen">
+{% endblock %}
+
+{% block title %}Orders{% endblock %}
+
+{% block content %}
+{% for order in orders %}
+<div id="order-{{order.key.id}}" class="order">
+<div class="status">
+	<span>{{order.key.id}}</span>
+</div>
+<div class="title">
+<h4><a href="dashboard/orders/edit/{{order.key.id}}">Order: {{order.key.id}}</a></h4>{{order.client}}
+</div>
+</div>
+{% endfor %}
+{% endblock %}

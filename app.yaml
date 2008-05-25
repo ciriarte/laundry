@@ -10,5 +10,14 @@ handlers:
 - url: /images
   static_dir: content/images
 
-- url: /.*
+- url: /dashboard/products.*
+  script: controllers/product.py
+
+- url: /dashboard(|/orders/).*
+  script: controllers/order.py 
+
+- url: (^/$|^/services$|^/contact|^/login)
   script: controllers/home.py
+  
+- url: /.*
+  script: controllers/not_found.py
