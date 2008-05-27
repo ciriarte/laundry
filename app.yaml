@@ -10,6 +10,12 @@ handlers:
 - url: /images
   static_dir: content/images
 
+- url: /profile/.*
+  script: controllers/profile.py
+
+- url: /dashboard/admin
+  script: controllers/admin.py
+
 - url: /dashboard/products.*
   script: controllers/product.py
 

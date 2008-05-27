@@ -1,0 +1,17 @@
+{% extends "../main.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="/stylesheets/orders/index.css" type="text/css" media="screen">
+{% endblock %}
+
+{% block title %}Profiles{% endblock %}
+
+{% block content %}
+<ul>
+{% for profile in profiles %}
+<div id="profile-{{profile.key.id}}" class="profile">
+<li><span class='nickname'>{{profile.user}}</span> <span class='role'>{{profile.role}}</span></li>
+</div>
+{% endfor %}
+</ul>
+{% endblock %}
