@@ -9,16 +9,17 @@
   {% block scripts %} {% endblock %}
   <title>Laundry - {% block title %} {% endblock %}</title>
 </head>
-<body {% block bodyHooks %}{% endblock %}>
-  <div class="wrapper">
+<body> 
+  <div class="wrapper"> 
   <div class="header">
-	<img src="/images/laundryLogo-small.png">
-  </div>
+	<img class="logo" src="/images/laundryLogo-small.png">  
+	{% block header %} {% endblock %}
+  </div>	
   {% include "navigation.html" %}
   <div class="content">
   {% block content %} {% endblock %}
   </div>
-  <div class="content-bottom"></div>
+  <div class="content-bottom"></div> 
   </div>
 </body>
 </html>

@@ -1,0 +1,26 @@
+/* @override http://localhost:8080/stylesheets/profile.css */
+
+a {
+  color: #165B9F;
+}
+
+label {
+	float: left;
+	width: 6em;
+}
+
+p {
+	margin-bottom: 0.4em;
+}
+
+fieldset {
+	border: 2px solid #09548B;
+}
+
+legend {
+	color: #09548B;
+}
+
+.submitButton {
+	margin-left: 9em;
+}

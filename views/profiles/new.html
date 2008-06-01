@@ -1,0 +1,21 @@
+{% extends "../main.html" %}
+
+{% block scripts %}
+<script type="text/javascript" src="/scripts/jquery.js"></script> 
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/stylesheets/profile.css" type="text/css" media="screen">  
+{% endblock %}
+
+{% block title %}Registration{% endblock %}
+
+{% block content %}
+<form id="profile" method="post" action="/profiles/new">
+<fieldset>
+<legend>Contact</legend>
+{{ form.as_p }}
+<input class="submitButton" type="submit" /> 
+</form>
+</fieldset>
+{% endblock %}   

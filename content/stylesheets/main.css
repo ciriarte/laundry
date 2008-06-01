@@ -45,7 +45,7 @@ p {
 	height: 41px;
 }
 .nav ul {
-	width: 648px;
+	width: 624px;
 	height: 38px;
 	float: left;
 	margin: 0;
@@ -176,7 +176,7 @@ a .menu-right {
 	clear: both;
 }
 .nav-tool {
-	width: 648px;
+	width: 688px;
 	height: 38px;
 	float: left;
 	margin: 0;
@@ -212,4 +212,21 @@ a .menu-right {
 	background: transparent url(/images/content_bottom.png) no-repeat;
 	height: 13px;
 	float: left;
+}
+
+.login {
+	float: right;
+	margin-top: 5px;
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+}
+
+.login a img {
+	border: 0px;
+}
+
+.login:hover img {
+	position: relative;
+	top: -25px;
 }

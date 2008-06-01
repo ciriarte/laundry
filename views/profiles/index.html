@@ -1,0 +1,19 @@
+{% extends "../main.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="/stylesheets/profiles/index.css" type="text/css" media="screen">
+{% endblock %}
+
+{% block title %}Profiles{% endblock %}
+
+{% block content %}
+{% for profile in profiles %}
+<div id="profile-{{profile.key.id}}" class="profile">
+<a href="dashboard/profiles/edit/{{profile.key.id}}">
+{{profile.first_Name}} 
+{{profile.last_Name}}
+{{profile.phone}}
+</a>
+</div>
+{% endfor %}
+{% endblock %}

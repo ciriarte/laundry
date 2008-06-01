@@ -5,30 +5,50 @@ import wsgiref.handlers
 from google.appengine.api        import users
 from google.appengine.ext        import webapp
 from google.appengine.ext.webapp import template
+from google.appengine.ext.db     import djangoforms
 
-from django import newforms as forms
+from django                      import newforms as forms
 
-class ProfileForm(forms.Form):
-    first_Name = forms.CharField(max_length=100)
-    last_Name  = forms.CharField()
-    country    = forms.CharField()
-    state      = forms.CharField()
-    city       = forms.CharField()
-    street     = forms.CharField()
-    zip        = forms.RegexField('^[0-9]{5}$')
-    phone      = forms.RegexField('(^\d{5}$)|(^\d{5}-\d{4}$)')
-    email      = forms.EmailField()
+from models.profile              import Profile
 
-class Index(webapp.RequestHandler):    
-  def get(self):	
+class ProfileForm(djangoforms.ModelForm):
+  class Meta:
+    model = Profile 
+    exclude = ['user',
+               'role']
+
+class Index(webapp.RequestHandler):
+ def get(self):	
 	path = os.path.join(os.path.dirname(__file__),
-	                    '../views/profile/index.html')
-	
-	profileForm = ProfileForm()
-	self.response.out.write(template.render(path, {'form': profileForm})) 	
+	                    '../views/profiles/index.html')
 
+	template_values = {
+		'name': self.__class__.__name__,
+		'profiles': Profile.all().order('-last_Name'),
+	}
+
+	self.response.out.write(template.render(path, template_values)) 
+
+class New(webapp.RequestHandler):    
+  def get(self):	
+	  path = os.path.join(os.path.dirname(__file__),
+	                      '../views/profiles/new.html')	
+	  profileForm = ProfileForm()
+	  self.response.out.write(template.render(path, {'form': profileForm})) 	
+    
+  def post(self):
+	  profileForm = ProfileForm(data=self.request.POST)
+	  if profileForm.is_valid():
+	    entity = profileForm.save(commit=False) 
+	    entity.put() 
+	    self.redirect('/profiles')
+	  else:
+	    self.response.out.write(template.render(path, {'form': profileForm}))
+	    
 def main():
-  application = webapp.WSGIApplication([('/profile/new', Index)], debug=True)
+  application = webapp.WSGIApplication([('/profiles',     Index),
+                                        ('/profiles/new', New)],
+                                        debug=True)
   wsgiref.handlers.CGIHandler().run(application)
 
 if __name__ == "__main__":

@@ -1,0 +1,37 @@
+/* @override http://localhost:8080/stylesheets/home.css */
+
+.textImage {
+  float: right;
+  margin-left: 10px;
+}
+
+.logo {
+  float: left;
+}
+
+.pics {
+  margin-left: 238px;
+}
+
+.pics img { padding: 6px; border: 1px solid #ccc; background-color: #eee; top:0; left:0 }
+
+#map {
+	float: left;
+}
+
+.vcard {
+  float: right;
+  width: 250px;
+}
+
+.vcard a {
+  	color: #09548B;
+}
+
+.org {
+  background: url(/images/icon-hcard-download.png) no-repeat right;
+}
+
+.hidden {
+  display: none;
+}

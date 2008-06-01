@@ -5,21 +5,14 @@ import wsgiref.handlers
 from google.appengine.api        import users
 from google.appengine.ext        import webapp
 from google.appengine.ext.webapp import template
-from google.appengine.ext        import db
 
 from models.profile              import Profile
 
 class Index(webapp.RequestHandler):
   def get(self):
 	  path = os.path.join(os.path.dirname(__file__),
-	                      '../views/%s.html' % ("home"
-	                      if self.request.path == "/" else self.request.path[1:]))
-	
-	  template_values = {
-      'section': self.request.path[1:],
-    }
-	
-	  self.response.out.write(template.render(path, template_values))
+	                      '../views/home/index.html')
+	  self.response.out.write(template.render(path, None))
 
 class Login(webapp.RequestHandler):
 	def get(self):
@@ -27,7 +20,7 @@ class Login(webapp.RequestHandler):
 		if user:
 		  profile = Profile.gql("WHERE user = :1", user).get()
 		  if not profile:
-		    self.redirect("/profile/new")
+		    self.redirect("/profiles/new")
 		    return
 		  self.redirect("/dashboard")
 		else:
